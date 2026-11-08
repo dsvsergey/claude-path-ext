@@ -42,7 +42,7 @@ A shortcut doesn't pass the Explorer selection to a command. To get it, the exte
 
 ### Option 1: from a release (recommended)
 
-1. Download `claude-path.vsix` from the [Releases](../../releases) page.
+1. Download `claude-path.vsix` from the [Releases](https://github.com/dsvsergey/claude-path-ext/releases) page.
 2. Install it in one of two ways:
    - from a terminal:
      ```
@@ -57,7 +57,7 @@ A shortcut doesn't pass the Explorer selection to a command. To get it, the exte
 Building needs only Python 3, with no packages and no Node.js.
 
 ```
-git clone <repository-url>
+git clone https://github.com/dsvsergey/claude-path-ext.git
 cd claude-path-ext
 python build_vsix.py
 code --install-extension claude-path.vsix --force

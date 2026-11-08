@@ -5,6 +5,7 @@
   "version": "0.0.2",
   "publisher": "local",
   "license": "MIT",
+  "repository": { "type": "git", "url": "https://github.com/dsvsergey/claude-path-ext.git" },
   "engines": { "vscode": "^1.80.0" },
   "main": "./extension.js",
   "activationEvents": [],

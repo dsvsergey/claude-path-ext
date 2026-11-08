@@ -42,7 +42,7 @@
 
 ### Варіант 1: з релізу (рекомендовано)
 
-1. Завантажте `claude-path.vsix` зі сторінки [Releases](../../releases).
+1. Завантажте `claude-path.vsix` зі сторінки [Releases](https://github.com/dsvsergey/claude-path-ext/releases).
 2. Встановіть одним зі способів:
    - з термінала:
      ```
@@ -57,7 +57,7 @@
 Для збирання потрібен лише Python 3, без пакетів і без Node.js.
 
 ```
-git clone <адреса-репозиторію>
+git clone https://github.com/dsvsergey/claude-path-ext.git
 cd claude-path-ext
 python build_vsix.py
 code --install-extension claude-path.vsix --force
