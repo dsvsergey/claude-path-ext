@@ -1,0 +1,35 @@
+{
+  "name": "claude-path",
+  "displayName": "Claude @-path",
+  "description": "Explorer context menu: send file to Claude Code as @-mention or copy @-path",
+  "version": "0.0.2",
+  "publisher": "local",
+  "license": "MIT",
+  "engines": { "vscode": "^1.80.0" },
+  "main": "./extension.js",
+  "activationEvents": [],
+  "contributes": {
+    "commands": [
+      { "command": "claudePath.send", "title": "Claude: відправити в Claude Code" },
+      { "command": "claudePath.copy", "title": "Claude: скопіювати @-шлях" }
+    ],
+    "keybindings": [
+      { "command": "claudePath.send", "key": "alt+k", "when": "filesExplorerFocus && !inputFocus" },
+      { "command": "claudePath.copy", "key": "alt+shift+k", "when": "filesExplorerFocus && !inputFocus" }
+    ],
+    "menus": {
+      "explorer/context": [
+        { "command": "claudePath.send", "group": "7_claude@1" },
+        { "command": "claudePath.copy", "group": "7_claude@2" }
+      ],
+      "editor/title/context": [
+        { "command": "claudePath.send", "group": "7_claude@1" },
+        { "command": "claudePath.copy", "group": "7_claude@2" }
+      ],
+      "commandPalette": [
+        { "command": "claudePath.send", "when": "false" },
+        { "command": "claudePath.copy", "when": "false" }
+      ]
+    }
+  }
+}
