@@ -2,7 +2,7 @@
   "name": "claude-path",
   "displayName": "Claude @-path",
   "description": "Explorer context menu: send file to Claude Code as @-mention or copy @-path",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "publisher": "local",
   "license": "MIT",
   "repository": { "type": "git", "url": "https://github.com/dsvsergey/claude-path-ext.git" },

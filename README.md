@@ -19,16 +19,19 @@ Use it when drag-and-drop from the Explorer into the Claude Code panel doesn't w
 - Multi-selection works: select several files with `Ctrl+click`, and they are all sent or copied together.
 - Paths are relative to the workspace root and use forward slashes. A folder gets a trailing `/`, and a path with
   spaces is wrapped in quotes.
-- Folders and files that can't be opened as text (images and so on) can't be inserted directly. The extension
-  copies their `@`-paths to the clipboard and focuses the chat input, so you only need to press `Ctrl+V`.
+- Any file can be sent, including binary ones (`.docx`, `.pdf`, images), and so can folders. If insertion fails,
+  the extension copies the `@`-paths to the clipboard and focuses the chat input, so you only need to press
+  `Ctrl+V`.
 - `Alt+K` in a text editor stays bound to Claude Code's own **Insert @-Mention Reference**. This extension binds
   `Alt+K` only while the Explorer has focus.
 
 ## How it works
 
-Claude Code's built-in `claude-vscode.insertAtMention` command works only with the active editor. The extension
-opens the selected file as a preview tab, with no selection so that no line range is added, and then calls that
-command.
+Claude Code's built-in `claude-vscode.insertAtMention` command works only with the active editor, and it takes
+just the file name (`document.fileName`) from it, not the content. So the extension doesn't open the real file.
+It opens an empty virtual document with the same path, under its own `claude-path:` scheme, calls that command and
+closes the tab. A blank tab may flash for a moment. The document has no selection, so no line range is added to
+the mention.
 
 A shortcut doesn't pass the Explorer selection to a command. To get it, the extension runs VS Code's
 `copyFilePath` command, reads the clipboard and then restores what was there before.
